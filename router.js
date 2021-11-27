@@ -12,11 +12,18 @@ router.get('/home', function (req, res) {
         }
         res.render('index.html', {
             Shops: [
-
-                'Pchome',
-                'Momo',
-                'Shopee',
-
+                {
+                    name: 'pchome',
+                    website: 'https://www.pchomeec.tw/'
+                },
+                {
+                    name: 'Momo',
+                    website: 'https://www.momoshop.com.tw/'
+                },
+                {
+                    name: '博客來',
+                    website: 'https://www.books.com.tw/'
+                }
             ]
             , items: items
 
