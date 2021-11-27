@@ -11,14 +11,14 @@ router.get('/home', function (req, res) {
             return res.status(500).send('server error')
         }
         res.render('index.html', {
-            fruits: [
+            Shops: [
 
-                'apple',
-                'banana',
-                'orange',
+                'Pchome',
+                'Momo',
+                'Shopee',
 
             ]
-            , items: items//JSON.parse(data).items
+            , items: items
 
         })
     })
@@ -55,6 +55,17 @@ router.post('/items/edit', function (req, res) {
     var id = req.body.id
 
     Item.findByIdAndUpdate(id, req.body, function (err) {
+        if (err) {
+            return res.status(500).send('server error')
+        }
+        res.redirect('/home')
+    })
+})
+
+//刪除商品
+router.get('/items/delete', function (req, res) {
+    var id = req.query.id
+    Item.findByIdAndRemove(id, function (err) {
         if (err) {
             return res.status(500).send('server error')
         }
