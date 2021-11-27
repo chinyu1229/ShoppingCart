@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,11 +10,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>YourCart</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
 
 
     <!-- Custom styles for this template -->
@@ -34,14 +33,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Project name</a>
+                <a class="navbar-brand" href="#">ByeBuy List</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Settings</a></li>
+                    <!-- <li><a href="#">Dashboard</a></li> -->
+                    <!-- <li><a href="#">Settings</a></li> -->
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Help</a></li>
+                    <!-- <li><a href="#">Help</a></li> -->
                 </ul>
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="Search...">
@@ -55,51 +54,47 @@
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Reports</a></li>
+                    <!-- <li><a href="#">Reports</a></li>
                     <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Export</a></li> -->
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item</a></li>
+                    <!-- <li><a href="">Nav item</a></li>
                     <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
                     <li><a href="">Another nav item</a></li>
-                    <li><a href="">More navigation</a></li>
+                    <li><a href="">More navigation</a></li> -->
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item again</a></li>
+                    <!-- <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
+                    <li><a href="">Another nav item</a></li> -->
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                <h2 class="sub-header">編輯學生</h2>
-                <form action="/students/edit" method="post">
-                    <input type="hidden" name="id" value="{{ student.id }}">
+                <h2 class="sub-header">編輯商品</h2>
+                <form action="/items/edit" method="post">
+                    <input type="hidden" name="id" value="{{ item.id }}">
                     <div class="form-group">
-                        <label for="">Name</label>
-                        <input type="text" class="form-control" id="" name="name" required maxlength="10"
-                            value="{{student.name}}">
+                        <label for="">itemName</label>
+                        <input type="text" class="form-control" id="" name="itemName" required maxlength="20"
+                            value="{{item.itemName}}">
                     </div>
                     <div class="form-group">
-                        <label for="">Gender</label>
-                        <div>
-                            <label class="radio-inline">
-                                <input type="radio" name="gender" id="" value="0"> male
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="gender" id="" value="1"> female
-                            </label>
-                        </div>
+                        <label for="">shopName</label>
+                        <input type="text" class="form-control" id="" name="shopName" required maxlength="20"
+                            value="{{item.shopName}}">
+
                     </div>
                     <div class="form-group">
-                        <label for="">Age</label>
-                        <input type="number" class="form-control" id="" name="age" value="{{student.age}}">
+                        <label for="">website</label>
+                        <input type="text" class="form-control" id="" name="website" required maxlength="100"
+                            value="{{item.website}}">
                     </div>
                     <div class="form-group">
-                        <label for="">Hobbies</label>
-                        <input type="text" class="form-control" id="" name="hobbies" value="{{student.hobbies}}">
+                        <label for="">price</label>
+                        <input type="number" class="form-control" id="" name="price" value="{{item.price}}">
 
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
