@@ -1,27 +1,42 @@
 //use mongoose
 const mongoose = require('mongoose')
+var Schema = mongoose.Schema
+
 mongoose.connect('mongodb://localhost:27017/circus', { useNewUrlParser: true, useUnifiedTopology: true })
 
-var Schema = mongoose.Schema
+
 
 var itemSchema = new Schema({
     itemName: {
         type: String,
-        required: true
+        // required: true
     },
     shopName: {
-        type: Number,
-        enum: [0, 1],
-        default: 0
+        type: String,
     },
     website: {
-        type: Number
+        type: String
     },
     price: {
-        type: String
+        type: Number
     }
 })
 
-module.exports = mongoose.model('shoppingCart', itemSchema)
 
+module.exports = mongoose.model('ShoppingCart', itemSchema)
+
+var mod = mongoose.model('ShoppingCart', itemSchema)
+var item = new mod({
+    itemName: 'ipad',
+    shopName: 'momo',
+    website: 'momo.com',
+    price: 1000
+})
+
+console.log(item)
+item.save(function (err) {
+    if (err) {
+        console.log(err)
+    }
+})
 
