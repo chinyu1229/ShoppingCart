@@ -25,18 +25,18 @@ var itemSchema = new Schema({
 
 module.exports = mongoose.model('ShoppingCart', itemSchema)
 
-var mod = mongoose.model('ShoppingCart', itemSchema)
-var item = new mod({
-    itemName: 'ipad',
-    shopName: 'momo',
-    website: 'momo.com',
-    price: 1000
-})
+// var mod = mongoose.model('ShoppingCart', itemSchema)
+// var item = new mod({
+//     itemName: 'ipad',
+//     shopName: 'momo',
+//     website: 'momo.com',
+//     price: 1000
+// })
 
-console.log(item)
-item.save(function (err) {
-    if (err) {
-        console.log(err)
-    }
-})
+// console.log(item)
+// item.save(function (err) {
+//     if (err) {
+//         console.log(err)
+//     }
+// })
 
